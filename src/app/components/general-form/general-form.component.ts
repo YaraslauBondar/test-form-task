@@ -65,7 +65,7 @@ export class GeneralFormComponent implements OnInit {
 
   buildCheckboxForm(field: IFormSelect): void {
     this.testForm.addControl(field.model,
-      this.fb.array(field.choices.map(el => false)));
+      this.fb.array(field.choices.map(_ => false)));
     this.testForm.get(field.model)?.setValidators(atLeastOneCheckboxCheckedValidator());
   }
 
