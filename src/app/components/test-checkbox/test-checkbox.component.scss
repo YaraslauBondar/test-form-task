@@ -1,0 +1,23 @@
+@use "../../../styles/button";
+@use "../../../styles/main";
+@use "../../../styles/abstracts/color-styles";
+
+.checkbox-container {
+  flex-wrap: wrap;
+  margin-top: 10px;
+  max-width: 500px;
+
+  input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    accent-color: color-styles.$yellow-hover;
+  }
+}
+
+.centered-field {
+  min-width: 230px;
+}
+
+.select-all {
+  font-weight: bold;
+}

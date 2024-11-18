@@ -1,0 +1,72 @@
+@use "../../../styles/button";
+@use "../../../styles/main";
+@use "../../../styles/abstracts/color-styles";
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+}
+
+.select-selected {
+  cursor: pointer;
+  width: 300px;
+  text-align: left;
+  color: rgba(157, 157, 157, 1);
+}
+
+.back-select-items {
+  background-color: rgba(215, 215, 215, 1);
+  width: 306px;
+  max-height: 255px;
+  position: absolute;
+  top: 52px;
+  padding-left: 1px;
+}
+
+.select-items {
+  background-color: color-styles.$background-white;
+  z-index: 10;
+  width: 300px;
+  max-height: 255px;
+  position: relative;
+  top: -5px;
+}
+
+.select-items div {
+  height: 26px;
+  margin: 9px 0;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+.select-items div:hover {
+  background-color: color-styles.$yellow-hover;
+}
+
+.selected {
+  background-color: color-styles.$yellow-default;
+}
+
+.has-value {
+  color: color-styles.$black-default;
+}
+
+.select-container {
+  width: 300px;
+  position: relative;
+  text-decoration: none;
+  color: color-styles.$black-default;
+}
+
+.select-selected::before {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  content: "";
+  right: 1rem;
+  pointer-events: none;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  transform: rotate(45deg);
+  top: 12px;
+}

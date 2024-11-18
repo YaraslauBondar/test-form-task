@@ -1,0 +1,21 @@
+<div class="flex-container default-text">
+  <label class="form-label">
+    {{ config.label }} <span *ngIf="config.required" class="required">*</span>
+  </label>
+  <div class="select-container flex-container">
+    <div class="select-selected input default-border"
+         [ngClass]="{'has-value': control.getRawValue().length}"
+         (click)="openSelection()">
+      {{control.getRawValue() || 'Select an Option'}}
+    </div>
+    <div class="back-select-items default-border" *ngIf="isOpen">
+      <div class="select-items column-container default-border">
+        <div *ngFor="let choice of config.choices"
+             [ngClass]="{'selected': choice === control.getRawValue()}"
+             (click)="selectValue(choice)">
+          {{ choice }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

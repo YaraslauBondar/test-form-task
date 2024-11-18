@@ -1,0 +1,47 @@
+@use "abstracts/color-styles";
+
+.input {
+  max-width: 300px;
+  height: 44px;
+  border: 1px solid color-styles.$border-default;
+  background-color: color-styles.$background-white;
+  cursor: pointer;
+  padding: 10px 15px 10px 15px;
+  box-sizing: border-box;
+}
+
+.default-text {
+  font-family: Sans, sans-serif;
+  font-size: 17px;
+  line-height: 22px;
+}
+
+.description-text {
+  font-family: Sans, sans-serif;
+  font-size: 13px;
+  line-height: 16.82px;
+  color: rgba(157, 157, 157, 1);
+}
+
+.flex-container {
+  display: flex;
+  gap: 15px;
+}
+
+.form-label {
+  width: 140px;
+  padding-top: 12px;
+}
+
+.centered-field {
+  align-items: center;
+}
+
+.column-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.default-border {
+  border-radius: 3px;
+}

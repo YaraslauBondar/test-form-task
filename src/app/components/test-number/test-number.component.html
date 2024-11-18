@@ -1,0 +1,26 @@
+<div class="flex-container default-text">
+  <label class="form-label">
+    {{ config.label }} <span *ngIf="config.required" class="required">*</span>
+  </label>
+  <div class="column-container flex-container">
+    <div class="centered-field flex-container" *ngFor="let control of formArray.controls; let i = index">
+      <div class="input-with-arrows">
+        <input class="input default-text default-border"
+               [formControl]="control"
+               [style]="{'width': config.width ? config.width + 'px' : '300px'}"
+               type="number" />
+        <div class="column-container">
+          <button class="arrow-up" (click)="valueUp(control)"></button>
+          <button class="arrow-down" (click)="valueDown(control)"></button>
+        </div>
+      </div>
+      <button *ngIf="i > 0" class="remove-button" (click)="removeInput(i)"></button>
+      <div *ngIf="i === formArray.controls.length - 1 && config?.canAdd" class="add-button-container">
+        <button  class="add-button" (click)="addInput()"></button>
+        Добавить еще
+      </div>
+    </div>
+    <label class="description-text" *ngIf="config.description">{{config.description}}</label>
+  </div>
+
+</div>

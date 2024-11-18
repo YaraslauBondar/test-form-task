@@ -1,0 +1,60 @@
+@use "../../../styles/button";
+@use "../../../styles/main";
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.input-with-arrows {
+  display: flex;
+  gap: 5px;
+}
+
+.arrow-up,
+.arrow-down {
+  border: 0;
+}
+
+.arrow-up {
+  border-bottom: 1px solid rgba(157, 157, 157, 1);
+  border-radius: 3px 3px 0 0;
+}
+
+.arrow-down {
+  border-top: 1px solid rgba(157, 157, 157, 1);
+  border-radius: 0 0 3px 3px;
+}
+
+.arrow-up, .arrow-down {
+  width: 30px;
+  height: 22px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  background-color: rgba(223, 223, 223, 1);
+}
+
+.arrow-up:hover, .arrow-down:hover {
+  opacity: 70%;
+}
+
+.arrow-up:before,
+.arrow-down:before {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid rgba(157, 157, 157, 1);
+  right: 5px;
+  top: 5px;
+}
+
+.arrow-down:before {
+  transform: rotate(180deg);
+}

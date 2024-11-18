@@ -6,6 +6,9 @@
     "form-generator-test": {
       "projectType": "application",
       "schematics": {
+        "@schematics/angular:application": {
+          "style": "scss"
+        },
         "@schematics/angular:component": {
           "standalone": false
         },

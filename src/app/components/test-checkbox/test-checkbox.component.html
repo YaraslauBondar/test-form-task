@@ -1,0 +1,16 @@
+<div class="flex-container default-text">
+  <label class="form-label">
+    {{ config.label }} <span *ngIf="config.required" class="required">*</span>
+  </label>
+  <div class="checkbox-container flex-container centered-field">
+    <div class="centered-field flex-container" *ngFor="let control of formArray.controls; let i = index">
+      <input [formControl]="control" type="checkbox" class="default-border">
+      <label>{{config.choices[i]}}</label>
+    </div>
+    <div class="centered-field flex-container">
+      <input (change)="selectAll()" type="checkbox" class="default-border">
+      <label class="select-all">Выделить все</label>
+    </div>
+  </div>
+</div>
+

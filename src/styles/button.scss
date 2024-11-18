@@ -1,0 +1,108 @@
+@use "abstracts/color-styles";
+
+.button {
+  height: 52px;
+  width: 139px;
+  padding: 14px 30px;
+  border: none;
+  cursor: pointer;
+  background-color: color-styles.$yellow-hover;
+  color: color-styles.$black-default;
+  box-shadow: 0 1px 1px rgba(199, 178, 88, 1);
+
+  &.inactive {
+    cursor: not-allowed;
+    opacity: 40%;
+  }
+
+  &:hover:not(.inactive) {
+    opacity: 70%;
+  }
+}
+
+.add-button,
+.remove-button {
+  width: 26px;
+  height: 26px;
+  border: 1px solid;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  position: relative;
+}
+
+.add-button {
+  background-color: color-styles.$background-white;
+
+  &:before {
+    position: absolute;
+    top: 6px;
+    left: 12px;
+    content: '';
+    display: block;
+    width: 1px;
+    height: 14px;
+    border-left: 1px solid color-styles.$black-default;
+  }
+
+  &:after {
+    position: absolute;
+    top: 11px;
+    left: 5px;
+    content: '';
+    display: block;
+    width: 14px;
+    height: 1px;
+    border-bottom: 1px solid color-styles.$black-default;
+  }
+
+  &:hover {
+    background-color: color-styles.$yellow-hover;
+  }
+}
+
+.remove-button {
+  background-color: rgba(252, 99, 99, 1);
+
+  &:before {
+    position: absolute;
+    top: 6px;
+    left: 12px;
+    content: '';
+    display: block;
+    width: 1px;
+    height: 14px;
+    border-left: 1px solid color-styles.$background-white;
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    position: absolute;
+    top: 11px;
+    left: 5px;
+    content: '';
+    display: block;
+    width: 14px;
+    height: 1px;
+    border-bottom: 1px solid color-styles.$background-white;
+    transform: rotate(45deg);
+  }
+
+  &:hover {
+    background-color: color-styles.$background-white;
+
+    &:before {
+      border-color: color-styles.$black-default;
+    }
+
+    &:after {
+      border-color: color-styles.$black-default;
+    }
+  }
+}
+
+.add-button-container {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}

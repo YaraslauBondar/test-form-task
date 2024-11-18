@@ -1,0 +1,27 @@
+<form [formGroup]="testForm" class="general-form flex-container column-container">
+  <div *ngFor="let field of fields">
+    <div [ngSwitch]="field.type">
+      <app-test-input *ngSwitchCase="FormFieldTypeEnum.input"
+                      [config]="getInputField(field)"
+                      [formArray]="getFormArray(field.model)">
+      </app-test-input>
+      <app-test-select *ngSwitchCase="FormFieldTypeEnum.select"
+                       [config]="getSelectField(field)"
+                       [control]="getFormControl(field.model)">
+      </app-test-select>
+      <app-test-number *ngSwitchCase="FormFieldTypeEnum.number"
+                       [config]="getInputField(field)"
+                       [formArray]="getFormArray(field.model)">
+      </app-test-number>
+      <app-test-checkbox *ngSwitchCase="FormFieldTypeEnum.checkbox"
+                         [config]="getSelectField(field)"
+                         [formArray]="getFormArray(field.model)">
+      </app-test-checkbox>
+    </div>
+  </div>
+  <button [disabled]="testForm.invalid"
+          (click)="onSubmit()"
+          [ngClass]="{'inactive': testForm.invalid}" class="button default-text default-border">
+    Отправить
+  </button>
+</form>
